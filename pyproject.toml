@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.9"
+name = "python-helpers"
+version = "0.0.1"
+dynamic = ["dependencies", "optional-dependencies"]
+readme = "README.md"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.in"] }
+optional-dependencies.dev = { file = ["dev-requirements.in"] }
+
+[tool.black]
+line-length = 80
+
+[tool.flake8]
+max-line-length = 80
+
+[tool.isort]
+profile = "hug"
