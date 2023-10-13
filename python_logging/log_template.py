@@ -2,6 +2,7 @@ from enum import Enum
 import os
 import logging
 import logging.handlers
+import logging.config
 
 import yaml
 
@@ -35,7 +36,7 @@ def _init_default_logger(logger_name: str) -> logging.Logger:
     logger.addHandler(stream_handler)
     os.makedirs("logs", exist_ok=True)
     file_handler = logging.handlers.RotatingFileHandler(
-        filename=os.path.join("logs", f"{logger_name}.logs"),
+        filename=os.path.join("logs", f"{logger_name}.log"),
         maxBytes=1024 * 10,
         backupCount=20,
         encoding="utf8",
@@ -62,11 +63,12 @@ def init_logger(
         ValueError: logger name not present on config
     """
     package_name = os.path.basename(os.path.dirname(__file__))
-    logger_name = f"{package_name}_{dev_status.name}"
+    logger_name = f"{package_name}-{dev_status.name}"
 
     try:
         with open(logging_config_path, "rt") as f:
             logging_config = yaml.safe_load(f.read())
+        f.close()
     except FileNotFoundError as error:
         logger = _init_default_logger(logger_name)
         logger.warning(
