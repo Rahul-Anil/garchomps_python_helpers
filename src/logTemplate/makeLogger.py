@@ -6,6 +6,12 @@ import logging.config
 
 import yaml
 
+# TODO: add dev status to the file name that is created into the logs folder
+# TODO: add dev status to the logger name
+# TODO: add tests for the logger
+# TODO: add tox for the project
+# TODO: rename this package to match the package name
+
 
 class DevStatus(Enum):
     """Enum representing stages of development"""

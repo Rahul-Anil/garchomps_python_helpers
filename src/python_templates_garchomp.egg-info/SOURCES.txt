@@ -1,0 +1,14 @@
+.gitignore
+README.md
+dev-requirements.in
+dev-requirements.txt
+pyproject.toml
+requirements.in
+requirements.txt
+src/log_template/__init__.py
+src/log_template/init_template.py
+src/python_templates_garchomp.egg-info/PKG-INFO
+src/python_templates_garchomp.egg-info/SOURCES.txt
+src/python_templates_garchomp.egg-info/dependency_links.txt
+src/python_templates_garchomp.egg-info/requires.txt
+src/python_templates_garchomp.egg-info/top_level.txt

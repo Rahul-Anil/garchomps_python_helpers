@@ -1,0 +1,7 @@
+pyaml
+
+[dev]
+black
+isort
+pylint
+pytest

@@ -1,4 +1,0 @@
-2023-10-13 10:06:01,002 - python_logging_DEVELOPMENT - WARNING - File random.yaml could not be found (reason: FileNotFoundError(2, 'No such file or directory')), switching to default logger
-2023-10-13 10:06:01,002 - python_logging_DEVELOPMENT - INFO - Default logger has been invoked
-2023-10-13 12:51:55,145 - python_logging_DEVELOPMENT - WARNING - Logger name python_logging_DEVELOPMENT not present in logging config
-2023-10-13 12:51:55,145 - python_logging_DEVELOPMENT - INFO - Default logger has been invoked
