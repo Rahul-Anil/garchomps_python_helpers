@@ -54,12 +54,13 @@ def _init_default_logger(logger_name: str) -> logging.Logger:
 
 
 def init_logger(
-    logging_config_path: str, dev_status: DevStatus
+    logging_config_path: str, logger_base_name: str, dev_status: DevStatus
 ) -> logging.Logger:
     """Initialize logger from yaml config file
 
     Args:
         logging_config_path (str): Path to logging config file
+        logger_base_name(str): Base name of the logger without DevStatus
         dev_status (DevStatus): Represent current development Status of the Package
 
     Returns:
@@ -68,8 +69,7 @@ def init_logger(
     Raises:
         ValueError: logger name not present on config
     """
-    package_name = os.path.basename(os.path.dirname(__file__))
-    logger_name = f"{package_name}-{dev_status.name}"
+    logger_name = f"{logger_base_name}-{dev_status.name}"
 
     try:
         with open(logging_config_path, "rt") as f:
