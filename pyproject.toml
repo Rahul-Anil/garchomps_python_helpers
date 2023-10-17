@@ -24,7 +24,7 @@ optional-dependencies.dev = { file = ["dev-requirements.in"] }
 line-length = 80
 
 [tool.pylint]
-max-line-lenth = 80
+max-line-length = 80
 
 [tool.isort]
 profile = "hug"
