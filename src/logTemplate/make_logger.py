@@ -43,8 +43,10 @@ def init_logger(logging_config_path: str, logger_name: str) -> logging.Logger:
     f.close()
 
     log_output_path = logging_config["handlers"]["file"]["filename"]
-    log_output_parent_dir = Path(log_output_path).parent.absolute()
-    os.makedirs(os.path.dirname(log_output_parent_dir), exist_ok=True)
+    log_output_parent_dir = os.path.abspath(
+        os.path.join(log_output_path, os.pardir)
+    )
+    os.makedirs(log_output_parent_dir, exist_ok=True)
 
     if logger_name not in logging_config["loggers"]:
         raise ValueError(
