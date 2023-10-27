@@ -9,7 +9,7 @@ authors = [
     {name = "Rahul Anil", email = "rahulanil101@gmail.com"}
 ]
 description = "A template for python projects"
-version = "0.0.1"
+version = "0.0.2"
 dynamic = ["dependencies", "optional-dependencies"]
 readme = "README.md"
 
